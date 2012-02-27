@@ -8,7 +8,7 @@ You have a node process that you want to scale across CPUs or across servers, bu
 
 # Is this a database?
 
-No, although a database may be used as a means of storing and sharing the memory.
+No, although in upcoming forks of this project, a database may be used as a means of storing and sharing the memory.
 
 # Usage
 
@@ -18,7 +18,7 @@ In this implementation, you would run node-sharedmem as a service.  You can do s
 
 (will run on port 3000).  See also options for installing as a service or daemon on Windows or Linux: https://github.com/perfectapi/node-perfectapi/wiki/Installers.
 
-Once you have the service running on an endpoint, you can use it in this pattern (you will need to have perfectapi module installed, `npm install perfectapi`):
+Once you have the service running on an endpoint, you can use it in this pattern (you will need to have perfectapi module installed; `npm install perfectapi`):
 
 ```
 var perfectapi = require('perfectapi');
@@ -42,7 +42,7 @@ You can also access an API test page at http://localhost:3000/sharedmem/testapp 
 
 # Available methods (API)
 
-TODO
+I have put up a public [test page](http://services.perfectapi.com/sharedmem/testapp/) - it has all the commands and their descriptions.  You can also play around with the library there - just be aware that others may be doing the same.
 
 # Why are the methods asynchronous?
 

@@ -1,5 +1,5 @@
 {   "name":             "sharedmem"
-,   "version":          "0.0.2"
+,   "version":          "0.0.3"
     ,"description": "Shared memory for node processes"
 ,   "author":  {"name": "Steve Campbell", "email": "steve@perfectapi.com" }
     ,"keywords": "memory,sharedmem"
@@ -11,7 +11,7 @@
         "node" : ">=0.6.5"
     }
 ,   "dependencies":    {   
-		"perfectapi": ">=0.0.21"
+		"perfectapi": ">=0.0.22"
     }
 ,   "repository" :
     {

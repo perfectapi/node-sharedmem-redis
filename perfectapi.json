@@ -3,7 +3,7 @@
 		{ 
 			"name": "save",
 			"synopsis": "Saves a variable into shared memory",
-			"description": "",
+			"description": "Saves an individual variable into a collection in memory.  A collection is like an in-memory sql table.  A variable requires a key to uniquely identify it within the collection.  If there is no natural key, then use a generated guid or the value of a counter.  If required, use the 'expiresIn' option to force the variable to be cleared from memory after some timeout.",
 			"verb": "POST",
 			"parameters": [{"name": "collection", "required":true, "description":"collection in which to save the variable"},
 				{"name": "variable", "required":true, "description":"data to save, as javascript object or json string"},
@@ -16,7 +16,7 @@
 		{
 			"name": "get",
 			"synopsis": "Retrieve a variable from shared memory using its primary key",
-			"description": "",
+			"description": "Retrieve a variable from shared memory using its primary key.  The variable must exist in a collection.  If the collection does not exist or the variable does not exist then NULL is returned.",
 			"verb": "GET",
 			"parameters": [{"name": "collection", "required":true, "description":"collection in which the variable was saved"},
 				{"name": "key", "required":true, "description":"unique key for this data"}
@@ -25,7 +25,7 @@
 		{ 
 			"name": "remove",
 			"synopsis": "Removes a variable from shared memory",
-			"description": "",
+			"description": "Removes a variable from shared memory.  The variable will be removed from the collection",
 			"verb": "POST",
 			"parameters": [{"name": "collection", "required":true, "description":"collection in which to save the variable"},
 				{"name": "key", "required":true, "description":"unique key for this data, to be used as primary way to retrieve it"}
@@ -34,21 +34,21 @@
 		{ 
 			"name": "increment",
 			"synopsis": "Increments a counter in shared memory",
-			"description": "",
+			"description": "Increments a counter in shared memory.  Also returns the value of the counter.  First returned value will be 1.",
 			"verb": "POST",
 			"parameter": {"name": "counter", "required":true, "description":"name of the counter to increment"}
 		},
 		{ 
 			"name": "decrement",
 			"synopsis": "Decrements a counter in shared memory",
-			"description": "",
+			"description": "Decrements a counter in shared memory.  Also returns the value of the counter.",
 			"verb": "POST",
 			"parameter": {"name": "counter", "required":true, "description":"name of the counter to decrement"}
 		},
 		{
 			"name": "getArray",
-			"synopsis": "Retrieves an entire collection of variables",
-			"description": "",
+			"synopsis": "Retrieves an entire collection of variables.  The returned data will be in the form of an object containing a key-value pair for each variable",
+			"description": "Retrieves an entire collection of variables, using the va",
 			"verb": "GET",
 			"parameter": {"name": "collection", "required":true, "description":"collection in which the variables were saved"}
 		}
