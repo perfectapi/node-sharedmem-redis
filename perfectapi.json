@@ -53,9 +53,5 @@
 			"parameter": {"name": "collection", "required":true, "description":"collection in which the variables were saved"}
 		}
 	], 
-	"path": "sharedmem",
-	"environment": [
-		{"parameter": "REDIS_HOST", "required":false, "description":"host name of Redis server, without the port"},
-		{"parameter": "REDIS_DB_INDEX", "required":false, "default":0, "description":"DB to select in REDIS (usually 0-15, range configured in redis.conf)"}
-	]
+	"path": "sharedmem"
 }
