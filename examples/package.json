@@ -1,0 +1,21 @@
+{   "name":             "sharedmem-examples"
+,   "version":          "0.0.1"
+    ,"description": "Shared memory examples"
+,   "author":  {"name": "Steve Campbell", "email": "steve@perfectapi.com" }
+    ,"keywords": "memory,sharedmem"
+    ,"homepage": "http://www.perfectapi.com/"
+    ,"bugs": {"url": "https://github.com/perfectapi/node-sharedmem/issues", "email": "sharedmem@perfectapi.com" }
+    ,"main": "remote.js"
+,   "engines": {
+        "node" : ">=0.6.5"
+    }
+,   "dependencies":    {   
+		"perfectapi": ">=0.0.21",
+		"fiberize": ">=0.1.1"
+    }
+,   "repository" :
+    {
+        "type" : "git",
+        "url" : "git://github.com/perfectapi/node-sharedmem.git"
+    }
+}

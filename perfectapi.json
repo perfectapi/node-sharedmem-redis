@@ -1,0 +1,61 @@
+{	"exports": "sharedmem",
+	"signature": [
+		{ 
+			"name": "save",
+			"synopsis": "Saves a variable into shared memory",
+			"description": "",
+			"verb": "POST",
+			"parameters": [{"name": "collection", "required":true, "description":"collection in which to save the variable"},
+				{"name": "variable", "required":true, "description":"data to save, as javascript object or json string"},
+				{"name": "key", "required":true, "description":"unique key for this data, to be used as primary way to retrieve it"}
+			],
+			"options": [
+				{"option": "expiresIn", "description":"amount of time in milliseconds after which the variable should expire"}
+			]
+		},
+		{
+			"name": "get",
+			"synopsis": "Retrieve a variable from shared memory using its primary key",
+			"description": "",
+			"verb": "GET",
+			"parameters": [{"name": "collection", "required":true, "description":"collection in which the variable was saved"},
+				{"name": "key", "required":true, "description":"unique key for this data"}
+			]
+		},
+		{ 
+			"name": "remove",
+			"synopsis": "Removes a variable from shared memory",
+			"description": "",
+			"verb": "POST",
+			"parameters": [{"name": "collection", "required":true, "description":"collection in which to save the variable"},
+				{"name": "key", "required":true, "description":"unique key for this data, to be used as primary way to retrieve it"}
+			]
+		},
+		{ 
+			"name": "increment",
+			"synopsis": "Increments a counter in shared memory",
+			"description": "",
+			"verb": "POST",
+			"parameter": {"name": "counter", "required":true, "description":"name of the counter to increment"}
+		},
+		{ 
+			"name": "decrement",
+			"synopsis": "Decrements a counter in shared memory",
+			"description": "",
+			"verb": "POST",
+			"parameter": {"name": "counter", "required":true, "description":"name of the counter to decrement"}
+		},
+		{
+			"name": "getArray",
+			"synopsis": "Retrieves an entire collection of variables",
+			"description": "",
+			"verb": "GET",
+			"parameter": {"name": "collection", "required":true, "description":"collection in which the variables were saved"}
+		}
+	], 
+	"path": "sharedmem",
+	"environment": [
+		{"parameter": "REDIS_HOST", "required":false, "description":"host name of Redis server, without the port"},
+		{"parameter": "REDIS_DB_INDEX", "required":false, "default":0, "description":"DB to select in REDIS (usually 0-15, range configured in redis.conf)"}
+	]
+}
