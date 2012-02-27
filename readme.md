@@ -12,13 +12,13 @@ No, although a database may be used as a means of storing and sharing the memory
 
 # Usage
 
-In the default implementation, you would run node-sharedmem as a service.  You can do so from the command line like:
+In this implementation, you would run node-sharedmem as a service.  You can do so from the command line like:
 
     $ sharedmem server -p 3000
 
 (will run on port 3000).  See also options for installing as a service or daemon on Windows or Linux: https://github.com/perfectapi/node-perfectapi/wiki/Installers.
 
-Once you have the service running on an endpoint, you can use like this (you will need to have perfectapi module installed, `npm install perfectapi`):
+Once you have the service running on an endpoint, you can use it in this pattern (you will need to have perfectapi module installed, `npm install perfectapi`):
 
 ```
 var perfectapi = require('perfectapi');
@@ -39,6 +39,10 @@ perfectapi.proxy('http://localhost:3000/sharedmem', function(err, sharedmem) {
 ```
 
 You can also access an API test page at http://localhost:3000/sharedmem/testapp (replace localhost with your actual server name).
+
+# Available methods (API)
+
+TODO
 
 # Why are the methods asynchronous?
 
