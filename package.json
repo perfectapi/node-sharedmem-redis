@@ -1,21 +1,23 @@
-{   "name":             "sharedmem"
+{   "name":             "sharedmem-redis"
 ,   "version":          "0.0.3"
-    ,"description": "Shared memory for node processes"
+    ,"description": "Shared memory for node processes, backed by Redis"
 ,   "author":  {"name": "Steve Campbell", "email": "steve@perfectapi.com" }
-    ,"keywords": "memory,sharedmem"
+    ,"keywords": "memory,sharedmem,redis"
     ,"homepage": "http://www.perfectapi.com/"
-    ,"bugs": {"url": "https://github.com/perfectapi/node-sharedmem/issues", "email": "sharedmem@perfectapi.com" }
+    ,"bugs": {"url": "https://github.com/perfectapi/node-sharedmem-redis/issues", "email": "sharedmem@perfectapi.com" }
     ,"main": "./bin/sharedmem.js"
 	,"bin": "./bin/sharedmem.js"
 ,   "engines": {
         "node" : ">=0.6.5"
     }
 ,   "dependencies":    {   
-		"perfectapi": ">=0.0.22"
+		"perfectapi": ">=0.0.22",
+		"redis": ">=0.7.1",
+		"async": ">=0.1.15"
     }
 ,   "repository" :
     {
         "type" : "git",
-        "url" : "git://github.com/perfectapi/node-sharedmem.git"
+        "url" : "git://github.com/perfectapi/node-sharedmem-redis.git"
     }
 }
