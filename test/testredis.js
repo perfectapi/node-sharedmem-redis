@@ -1,6 +1,14 @@
 var redis = require('../bin/sharedmem.js');
 
 
+/**
+ * Testing notes: 
+ * 
+ * You have to do a manual flushdb on redis between test runs, otherwise the counter tests will fail.
+ * Redis does not currently support sub-second timeouts, which makes the tests quite slow.  Also, there is a bug 
+ * in some Redis versions that can make a timeout off by up to 1 second. 
+ * 
+*/
 describe('Shared redis', function() {
 
 
@@ -68,7 +76,7 @@ describe('Shared redis', function() {
             })
          
 
-          }, 1100);
+          }, 2000);
         })
       })      
     })
